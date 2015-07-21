@@ -3,7 +3,9 @@ background-color:#ff9588;
 margin:0;
 padding:0;
 }
-
+#instruct{
+	color:#057a85;
+}
 div {
 position:absolute;
 width:50%;
