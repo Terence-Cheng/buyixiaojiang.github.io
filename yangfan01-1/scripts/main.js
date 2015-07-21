@@ -1,3 +1,21 @@
+		// var canvas = document.createElement('canvas');
+		// var ctx = canvas.getContext("2d");
+		// canvas.position = 'absolute';
+		// canvas.display = 'block';
+		// canvas.top = 0;
+		// canvas.right = 0;
+		// canvas.left = 0;
+		// canvas.bottom = 0;
+		// canvas.width = $('body').eq(0) .width;
+		// canvas.height = $('body').height;
+		// 
+		// 
+		// var canvas = document.getElementById('gameCanvas');
+		// var canvas = document.getElementById('gameCanvas');
+		// var ctx = canvas.getContext("2d");
+		// $("body").append(canvas);
+		// 
+		// 
 		var button = $("button:eq(0)");
 		var p = $('p');
 		button.click(function(event) {
@@ -5,6 +23,7 @@
 			$('div').addClass('divHide');
 			time = totalTime;
 			goldCaught = 0;
+			createGold();
 		    activation();
 		    main();
 		    timeInterval = setInterval(tick, 1000);
@@ -17,13 +36,14 @@
 				clearInterval(timeInterval);
 				cancelAnimationFrame(mainFrame);
 				$('div').removeClass();
+				// $('div').css('display', 'flex');
+				// button.removeClass();
+				// p.removeClass();
 				if (goldCaught > max) {
 					max = goldCaught;
 				}
 				$('b:eq(0)').html(goldCaught);
 				$('b:eq(1)').html(max);
-				$("button:eq(0)").html("再玩一次");
-				unactivation();
 
 			}
 		}
@@ -55,7 +75,7 @@
 		goldImage.src = "images/gold.png";
 		//游戏对象
 		var cat = {
-			speed: 400,
+			speed: 512,
 			x: canvas.width / 2
 		}
 		// var gold = {
@@ -64,33 +84,13 @@
 		// }
 		var goldCaught = 0;
 		var keysDown = {};
-		//移动端
-		addEventListener ("touchstart", function (e) {
-			if (e.touches.length == 1){
-				if (e.touches[0].clientX > cat.x)
-					keysDown['right'] = true;
-				else {
-					keysDown['left'] = true;
-				}
-			}
-				
-		}, false);
-		addEventListener("touchend", function (e) {
-			// if (keysDown['left'])
-				delete keysDown['left'];
-			// else
-				delete keysDown['right'];
-		}, false);
-		addEventListener ("touchmove", function (e) {
-				e.preventDefault(); 
-		}, false);
-		//pc端
 		addEventListener ("keydown", function (e) {
 			keysDown[e.keyCode] = true;
 		}, false);
 		addEventListener("keyup", function (e) {
 			delete keysDown[e.keyCode];
 		}, false);
+
 		//随机函数
 		function rnd(a, b) {
 			return a + parseInt(Math.random() * (b - a));
@@ -104,13 +104,12 @@
 		// };
 		// 更新对象
 		var update = function(modifier) {
-			if (37 in keysDown || 'left' in keysDown) {
+			if (37 in keysDown) {
 				cat.x -= cat.speed * modifier;
 			}
-			if (39 in keysDown || 'right' in keysDown) {
+			if (39 in keysDown) {
 				cat.x += cat.speed * modifier;
 			}
-
 			for (var i = 0; i < poll.length; i++){
 				if (poll[i].inUse){
 					poll[i].move();
@@ -143,8 +142,8 @@
 			}
 			if(cat.x < 0) {
 				cat.x = 0;
-			} else if (cat.x > canvas.width - 75) {
-				cat.x = canvas.width - 75;
+			} else if (cat.x > canvas.width - 60) {
+				cat.x = canvas.width - 60;
 			}
 			if (catReady) {
 				ctx.drawImage(catImage, cat.x, canvas.height - 100);
@@ -175,7 +174,7 @@
 		  this.x = rnd(0, canvas.width - 50);
 		  this.y = -20;
 		  this.move = function() {
-		  	this.y += 6;
+		  	this.y += 3;
 		  }
 		  this.isOut = function() {
 		    if (this.y >= canvas.height) {
@@ -209,11 +208,6 @@
 			}
 			setTimeout(activation, rnd(500,1000));
 		}
-		function unactivation() {
-			for (var i = 0; i < size; i++){
-					poll[i].clear();
-			}
-		}
 
 		/////////////////////////////////////////////////////////////////
 		var w = window;
@@ -224,9 +218,9 @@
 		var then = Date.now();
 		var poll = [];
 		var size = 10;
-		var totalTime = 30;	
+		var totalTime = 5;	
 		var time = totalTime;
 		var timeInterval;
 		var mainFrame;
 		var max = 0;
-		createGold();
+
