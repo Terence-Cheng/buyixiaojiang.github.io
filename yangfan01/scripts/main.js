@@ -64,19 +64,18 @@
 		// radio.click('setMute()');
 		// //相关的对象函数
 		// //倒计时函数
-		$(":radio").click(function(){
-			if($(this).val() === "true")
-	   			for (var i = 0; i < audio.length; i++){
+		$(":radio").click(function() {
+			if ($(this).val() === "true")
+	   			 for (var i = 0; i < audio.length; i++){
 					audio[i].muted = false;
-				}
+				 }
 			else
 	   			for (var i = 0; i < audio.length; i++){
 					audio[i].muted = true;
 				}
   		 });
 		function tick () {
-			// time--;
-			if(life <= 0){
+			if (life <= 0) {
 				cancelAnimationFrame(timeFrame);
 				clearInterval(actInterval);
 				clearInterval(girlInterval);
@@ -216,8 +215,8 @@
 			// 	}			
 			// }
 			updatePosition(poll);
-			updatePosition(girlPoll,4);
-			updatePosition(bombPoll,6);
+			updatePosition(girlPoll, 4);
+			updatePosition(bombPoll, 6);
 			updatePosition(poll);
 			for (var i = 0; i < poll.length; i++){
 				if (poll[i].inUse){
