@@ -431,6 +431,7 @@ function mouseroverCourse (e) {
 	floatImg[0].src = result.list[i].middlePhotoUrl;
 	floatP[0].innerHTML = result.list[i].name;
 	floatP[0].className = 'title';
+	floatP[0].setAttribute('title', result.list[i].name);
 	floatP[1].innerHTML = result.list[i].learnerCount + '人在学';
 	floatP[2].innerHTML = '发布者 ： ' + result.list[i].provider;
 	if (!result.list[i].categoryName) {
@@ -659,6 +660,7 @@ function updateHot() {
 	for (var i = 0; i < 10; i++) {
 		hotImg[i].src = hotResult[i].smallPhotoUrl;							
 		hotP[2 * i].innerHTML = hotResult[i].name;
+		hotP[2 * i].setAttribute('title', hotResult[i].name);
 		hotP[2 * i + 1].innerHTML = hotResult[i].learnerCount;		
 	}
 	//把第一门课程删除并push到数组的最后
