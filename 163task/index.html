@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网易产品教育</title>
+	<link rel="stylesheet" type="text/css" href="styles/basic.css">
+</head>
+<body>
+	<!-- 登陆框的遮罩标签 -->
+	<div class='mask'></div>
+	<!-- 登录框标签 -->
+	<div id='login'>
+		<div class='log-shut'></div>
+		<div id='form'>
+			<h3>登陆网易云课堂</h3>
+			<input id='account' placeholder='账号'>
+			<input id='password' placeholder='密码' type='password'>
+			<button type='submit' id='submit'></button>
+		</div>
+	</div>
+	<!-- 顶部通知条标签,外面多加一个父容器是为了让背景颜色布满到宽度的100% -->
+	<div id='bar'>
+		<div class='clearfix'>
+			<p class='left'>网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势!
+				<a href="http://mooc.study.163.com/smartSpec/detail/12001.htm">&nbsp;立即查看&gt;</a>
+			</p>
+			<div id='shut'><div class='bar-shut'></div><p>不再提醒</p></div>
+		</div>
+	</div>
+	<!-- 顶部通知条的标签 -->
+	<div class='banner'>
+		<div class='ban-nav'>
+			<p><img src="images/blank.png" class='ban-eduImg'> 网易教育产品部</p>
+			<button type='button' class='follow'></button>
+			<!-- 已关注标签，默认不显示，成功关注后显示 -->
+			<p class='hasFollowed'>
+				√ 已关注 | <a href=""> 取消</a> 
+			</p>	
+			<p class='fans'>粉丝 45</p>	
+		</div>
+		<!-- 顶部通知条右边的的三个超链接 -->
+		<div class='ban-right'>
+			<a class='navThree' href="http://open.163.com/" target='_blank'>网易公开课</a>
+			<a class='navThree' href="http://study.163.com/" target='_blank'>云课堂</a>
+			<a class='navThree' href="http://www.icourse163.org/" target='_blank'>中国大学mooc</a>
+			<img src="images/blank.png" class='search'>
+		</div>	
+	</div>
+	<!-- 轮播图标签 -->
+	<div class='bannerImg'>
+		<!-- img和a只设置了一个，在js里只改变它的src和href属性即可 -->
+		<img src="images/banner1.jpg" class='banner1'>
+		<a href="http://open.163.com/" class='banner1' target='_blank'></a>
+		<!-- 以下三个div是图片中的三个小圆圈 -->
+		<div class='circle circle1 cir-selected'><a href="http://open.163.com/" target='_blank'></a></div>
+		<div class='circle circle2'><a href="http://study.163.com/" target='_blank'></a></div>
+		<div class='circle circle3'><a href="http://www.icourse163.org/" target='_blank'></a></div>
+	</div>	
+	<!-- 三个课堂学习的介绍 -->
+	<div class='three'>
+			<div class='thr-left'>
+				<img src="images/blank.png" alt="网易公开课" class='leftImg'>
+				<div class="oneThird">				
+					<h3>网易公开课</h3>
+					<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解，深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。
+					</p>
+					<a href="http://open.163.com/" target='_blank'>了解更多 &gt;</a>
+				</div>
+			</div>
+			<div class='thr-middle'>
+				<img src="images/blank.png" alt="">
+				<div class="oneThird">				
+					<h3>云课堂</h3>
+					<p>网易旗下大型学习在线平台，该平台面向学习者提供海量免费、优质课程，创新的个性化学习体验，自由开放的交流互动环境。
+					</p>
+					<a href="http://study.163.com/" target='_blank'>了解更多 &gt;</a>
+				</div>
+			</div>
+			<div class='thr-right'>
+				<img  src="images/blank.png" alt="">	
+				<div class="oneThird">
+					<h3>中国大学MOOC</h3>
+					<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解，深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。
+					</p>
+					<a href="http://www.icourse163.org/" target='_blank'>了解更多 &gt;</a>
+				</div>
+			</div>
+	</div>	
+	<!-- 工作图片的展示，第一个和最后一个加了类名是在响应式布局时用到 -->
+	<div class="workingSpace">
+		<img src="images/1_gym.jpg" alt="" class='working-first'>
+		<img src="images/2_meeting.jpg" alt="">
+		<img src="images/3_library.jpg" alt="">
+		<img src="images/4_camera.jpg" alt="">
+		<img src="images/5_food.jpg" alt="" class='working-last'>
+	</div>
+	<!-- 最外面的grand元素是为了让整个背景色填充到宽度的100% -->
+	<div class='course-grand'>
+		<!-- parent元素是整个课程包括右边热门课程的父容器元素 -->
+		<div class='course-parent'>
+			<!-- course是课程的父元素，包括tab切换和每个列表框还有浮动列表框 -->
+			<div class='course '>
+				<div class='tab'>
+					<ul>
+						<li id='firstTab' class='tab-selected'>产品设计</li>
+						<li id='secondTab'>编程语言</li>
+					</ul>
+				</div>
+				<!-- 以下是课程列表的元素，所有的li标签通过Js来生成 -->
+				<div class='course-list'>
+					<ul>
+					</ul>
+				</div>
+				<!-- 以下是页码标签 -->
+				<div class='course-page'>
+					<ul>
+						<li class='page-pre' id='page-pre'>&lt;</li>
+						<li class='page-selected'>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+						<li>8</li>
+						<li class='page-next' id='page-next'>&gt;</li>
+					</ul>
+				</div>
+				<!-- 课程列表hover上去后，浮动框的标签 -->
+				<div class='floatCourse'>
+					<img src="">
+					<p class='title'></p>
+					<p class='learnerCount'></p>
+					<p class='provider'></p>
+					<p></p>
+					<p class='description'></p>
+				</div>
+			</div>
+			<!-- 机构介绍的父元素 -->
+			<div class='orgIntro'>
+				<div class='introText'><p>机构介绍</p></div>
+				<div class='video'>
+					<p class='videoText'>观看下面的视频来了解吧 : </p>
+					<img src="images/blank.png">
+					<div class='videoNone'>
+						<p class='videoTop'>请观看下面的视频</p>
+						<video src='http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4' controls> 
+						</video>
+						<img id='shutVideo' src="images/blank.png">
+					</div>
+				</div>
+			</div>
+			<!-- 热门课程的父元素 -->
+			<div class='hotRank'>
+				<div class='hot-title'>最热排行</div>
+				<ul class='list'>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+					<li><img src=""><p class='title'></p><p class='learnerCount'></p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 底部标签，最外面这个父元素就是为了填充整个背景色到浏览器宽度的100% -->
+	<div class='footer'>
+		<!-- 底部元素的父容器 -->
+		<div class='content'>
+			<!-- 第一列 -->
+			<div class='edu'>
+				<p class='edu-img'><img src="images/blank.png">网易教育产品部</p>
+				<p class='icp'>©2014 icourse163.org 浙ICP备08114786号-1</p>
+				<p class='icourse'>icourses.cn 京ICP备12020869号-2 京公网安备110102000459-2</p>
+			</div>
+			<!-- 第二列，友情链接 -->
+			<div class='friends'>
+				<p>友情链接 ：</p>
+				<ul>
+					<li><a href="http://open.163.com/" target='_blank'>网易公开课</a></li>
+					<li><a href="http://study.163.com/" target='_blank'>网易云课堂</a></li>
+					<li><a href="http://www.icourse163.org/" target='_blank'>中国大学MOOC</a></li>
+				</ul>
+			</div>
+			<!-- 第三列，关于我们 -->
+			<div class='foot-about'>
+				<p>我们 ：</p>
+				<ul>
+					<li><a href="">关于</a></li>
+					<li><a href="">联系</a></li>
+					<li><a href="">备注</a><img src="images/blank.png"></li>
+				</ul>
+			</div>
+			<!-- 第四列，更多 -->
+			<div class='foot-more'>
+				<p>更多 ：</p>
+				<ul>
+					<li><a href="">常见问题</a></li>
+					<li><a href="">意见反馈</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/myJsLib.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

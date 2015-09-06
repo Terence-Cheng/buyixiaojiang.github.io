@@ -1,0 +1,961 @@
+/*css reset*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	cursor: pointer;
+}
+li {
+	list-style: none;
+}
+img {
+	border: 0;
+}
+footer, header, nav {
+	display:block;
+}
+/****************************************************/
+/*登陆框的遮罩布局,默认不显示，再就是提高层级*/
+.mask {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*设置级别,覆盖掉除了登录框之外的其他元素*/
+	z-index: 999;
+	background: #000;
+	opacity: 0.3;
+	/*IE8,9透明度兼容*/
+	filter: alpha(opacity=30)\9;
+}
+
+/****************************************************/
+/*以下设置登陆表单，层级要比遮罩高，默认不显示*/
+#login {
+	display: none;
+	position: fixed;
+	top: 30%;
+	left: 35%;
+	/*级别最高*/
+	z-index: 1000;
+	width: 387px;
+	height: 288px;
+	background: #fff;
+}
+/*表单元素的设置*/
+#form {
+	position: absolute;
+	top: 30px;
+	left: 40px;
+	width: 293px;
+	height: 218px;
+}
+/*文本框和按钮的设置*/
+#login input, #login button {
+	display: block;
+	width: 100%;
+	height: 41px;
+	margin-top: 29px;
+}
+#login input {
+	box-shadow: 2px 2px #f1f1f1 inset;
+}
+/*登陆框中登陆按钮的设置*/
+#login button {
+	width: 295px;
+	height: 48px;
+	border-top: 0;
+	border-left: 0;
+	/*不设置位置是因为默认为left top*/
+	background: url(../images/main.png);
+}
+/*账号输入框*/
+#account {
+	margin-top: 21px;
+}
+.loginSpan {
+	position: absolute;
+	color: #d8d8d8;	
+}
+#actSpan {
+	top: 65px;
+}
+#pwdSpan {
+	top: 140px;
+}
+/*密码输入框*/
+#password {
+	margin-top: 15px;
+}
+/*登陆框关闭按钮的设置*/
+.log-shut {
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	width: 11px;
+	height: 11px;
+	background: url(../images/main.png) -254px -96px;
+}
+/*关闭按钮的hover效果*/
+div.log-shut:hover {
+	cursor: pointer;
+}
+
+/****************************************************/
+/*以下是有关顶部通知条的样式*/
+header {
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	overflow: hidden;
+	font-size: 12px;
+	background: #f3f3f3;	
+}
+/*里面设置了浮动元素，清除浮动,因为一部分元素靠左，一部分元素靠右，所以两边设置了浮动，
+父元素要清除浮动，已便包含浮动的子元素*/
+header div.clearfix {
+	width: 1205px;
+	height: 100%;
+	margin: 0 auto;
+}
+/*响应式布局，改变宽度*/
+@media screen and (max-width: 1205px) {
+	header div.clearfix {
+		width: 960px;
+	}
+}
+/*清除浮动*/
+header div.clearfix:after {
+	content: '.';
+	height: 0;
+	visibility: hidden;
+	display: block;
+	clear: both;
+}
+header p {
+	display: inline-block;
+	color: #333;
+}
+/*通知条的元素一部分靠近左边，另一部分靠近右边*/
+/*左边的靠左浮动*/
+header .left {
+	float: left;
+}
+header a {
+	text-decoration: none;
+	color: #21a557; 
+} 
+/*右边的靠右浮动*/
+#shut {
+	float: right;
+	color: #484848;
+}
+/*不再提醒关闭按钮的设置*/
+div.header-shut {
+	display: inline-block;
+	width: 11px;
+	height: 9px;
+	background: url(../images/main.png) -254px -96px;	
+}
+div.header-shut:hover {
+	cursor: pointer;
+}
+
+/****************************************************/
+/*以下是有关banner也就是顶部导航条的样式，一部分靠左，一部分靠右，
+所以设置分别设置了左右浮动，而不是单纯的设置间距，
+这样子在浏览器窗口改变的时候还能保证布局方式*/
+nav {
+	width: 1205px;	
+	height: 89px;
+	line-height: 89px;
+	/*水平居中*/
+	margin: 0 auto;
+	font-size: 22px;	
+}
+@media screen and (max-width: 1205px) {
+	nav {
+		width: 960px;
+	}
+}
+/*左边的靠左浮动*/
+.ban-nav{
+	float: left;
+	color: #333;
+}
+nav p {
+	display: inline-block;
+}
+/*绿色的edu设置图片*/
+.ban-eduImg {
+	/*设置相对定位是因为图片的位置靠上了*/
+	position: relative;
+	top: 3px;
+	width: 70px;
+	height: 20px;
+	background: url(../images/main.png) 0 -140px;
+}
+/*关注按钮的设置*/
+nav button {
+	display: inline-block;
+	width: 54px;
+	height: 21px;
+	margin-left: 31px;
+	padding: 4px 9px 5px;
+	border: 0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;      
+    -webkit-border-radius: 3px; 
+	color: #fff;		
+	background: url(../images/main.png) -80px -140px;
+	/*IE兼容，按钮的位置靠上了*/
+	position: relative\9; 
+	top: 5px\9;
+	/*safari浏览器兼容*/
+	[;position: relative; top: 5px;]
+}
+/*火狐浏览器的兼容,浏览器兼容是因为它们默认的按钮对齐的方式不一样，为了居中，
+所以要调整下位置*/
+@-moz-document url-prefix() {
+	nav button {
+		position: relative;
+		top: -5px;
+	}
+}
+/*关注按钮hover效果*/
+nav button:hover {
+	background: url(../images/main.png) -138px -140px;
+	cursor: pointer;
+}
+/*关注成功后显示的标签，默认为不显示的*/
+nav p.hasFollowed {
+	display: none;
+	width: auto;
+	height: 21px;
+	line-height: 21px;
+	padding: 0 9px;
+	margin-left: 31px;
+	font-size: 12px;
+	color: #262626;
+	border: 2px solid #f1f1f1;
+	background: #fff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;      
+    -webkit-border-radius: 3px;
+}
+/*关注成功后hover效果*/
+p.hasFollowed:hover {
+	background: #fff;
+	cursor: text;
+}
+.hasFollowed a {
+	color: #959595;
+}
+/*关注成功后a标签的hover效果*/
+.hasFollowed a:hover {
+	text-decoration: underline;
+	color: #19a256;
+}
+/*粉丝样式设置*/
+.fans {
+	position: relative;	
+	margin-left: 14px;
+	font-size: 12px;
+	color: #666;
+}
+/*导航条右边三个超链接的设置，因为靠右边，所以往右浮动*/
+.ban-right {
+	float: right;
+}
+/*三个超链接的字体设置*/
+.navThree {
+	font-size: 16px;
+	text-decoration: none;
+	color: #000;	
+}
+/*除了第一个超链接之外，其余两个都有左边距*/
+.navThree + .navThree {
+	margin-left: 54px;
+}
+/*超链接的hover效果*/
+.navThree:hover{
+	color: #21a557; 
+}
+/*右边的放大镜的设置*/
+.search {
+	position: relative;
+	top: 3px;
+	width: 19px;
+	height: 19px;
+	margin-left: 54px;
+	background: url(../images/main.png) -255px -50px;
+}
+/*右边的放大镜hover效果设置*/
+.searchHover {
+	position: relative;
+	top: 3px;
+	width: 19px;
+	height: 19px;
+	margin-left: 54px;
+	background: url(../images/main.png) -275px -50px;	
+}
+
+/****************************************************/
+/*以下为轮播图的样式*/
+/*因为点击图片还有超链接，可以给图片添加点击事件，但也可以在图片上面放置一个a标签，
+让a标签覆盖掉图片，点击图片实际上是点击的a标签*/
+/*a标签设置了绝对定位，要充满整个父容器，所以父容器要相对定位*/
+ .bannerImg {
+	position: relative;
+	text-align: center;
+}
+/*img标签充满整个父容器的宽度，但同时设置一个最大宽度，
+以免浏览器尺寸太大，导致图片太大失真*/
+ .bannerImg img{
+	width: 100%;
+	max-width: 1652px;	
+}
+ .bannerImg a {
+ 	/*设置为绝对定位，设置四个角把a标签撑开，
+ 	这样点击图片实际上就是点击a标签*/
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/*IE浏览器兼容，IE浏览器的a标签不会覆盖掉图片，
+	给其设置了背景色就可以了，再设置全透明就会显示图片*/
+	background: #fff\9;
+	filter: alpha(opacity=0)\9;
+	opacity: 0\9;
+}
+/*背景图中的三个圆圈设置，定位之所以用百分比是因为图片缩小的时候
+以免小圆圈溢出图片之外*/
+.circle {
+	position: absolute;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	top: 93.48%;
+	border-radius: 5px;
+	background: #fff;
+}
+.circle:hover {
+	cursor: pointer;
+}
+.circle1 {
+	left: 47.96%;
+}
+.circle2 {
+	left: 49.26%;
+}
+.circle3 {
+	left: 50.56%;
+}
+.cir-selected {
+	background: #000;
+}
+
+/****************************************************/
+/*以下轮播图下面的三个课程的three样式*/
+/*整体布局就是左边的靠左浮动，右边的靠右浮动，中间居中，
+这样子浏览器在放大或缩小窗口的时候不至于错位*/
+.three {
+	width: 1205px;
+	height: 297px;
+	margin: 0 auto;
+	text-align: center;
+}
+@media screen and (max-width: 1205px) {
+	.three {
+		width: 960px;
+		height: 320px;
+	}
+}
+/*里面的每个图片靠左浮动*/
+.three img {
+	float: left;
+	margin-top: 61px;
+}
+.three h3 {
+	font-size: 22px;
+	color: #333;
+}
+.three p {
+	line-height: 24px;
+	font-size: 14px;
+	color: #666;
+}
+.three a {
+	position: absolute;
+	bottom: 0;
+	font-size: 14px;
+	color: #39a030;
+	text-decoration: none;	
+	
+} 
+.three a:hover {
+	text-decoration: underline;
+}
+/*左边的靠左浮动*/
+.thr-left {
+	float: left;
+	text-align: left;
+}
+.thr-left img {
+	width: 80px;
+	height: 80px;
+	background: url(../images/main.png) 0 -50px;
+}
+/*中间的居中*/
+.thr-middle {
+	display: inline-block;
+	text-align: left;
+}
+.thr-middle img {
+	width: 80px;
+	height: 80px;
+	background: url(../images/main.png) -85px -50px;	
+}
+/*右边的靠右浮动*/
+.thr-right {
+	float: right;
+	text-align: left;
+}
+.thr-right img {
+	width: 80px;
+	height: 80px;
+	background: url(../images/main.png) -170px -50px;	
+}
+/*对三块文字内容统一设置一下,就是标题、正文、超链接那块*/
+.oneThird {
+	display: inline-block;
+	position: relative;
+	width: 241px;
+	height: 175px;
+	margin: 60px 0 0 20px;
+}
+.oneThird p {
+	margin-top: 20px;
+}
+@media screen and (max-width: 1205px) {
+	.oneThird {
+		width: 180px;
+		height: 220px;
+	}
+}
+
+
+/*以下是workingSpace样式，就是那五张图片的样式*/
+/*布局思路就是每个图片平分浏览器的宽度，
+窄屏布局的时候实际上是四张图片的大小共享了宽度*/
+.workingSpace {
+	width: 100%;
+	height: 220px;
+	text-align: center;
+	overflow: hidden;
+}
+.workingSpace img {
+	max-width: 320px;
+	width: 19.3%;
+}
+@media screen and (max-width: 1205px) {
+	.workingSpace img {
+		/*窄屏布局的时候显示0.5+3+0.5，共四张图片的宽度*/
+		width: 25%;
+	}
+	.workingSpace .working-first {
+		/*窄屏布局的时候第一张图片移除到界外*/
+		margin-left: -50%;		
+	}
+	.workingSpace .working-last {
+		margin-right: -50%;
+	}
+}
+
+/****************************************************/
+/*课程祖辈元素设置*/
+/*有关课程，包括右边的机构介绍视频，我都建立了一个统一的容器，
+相当于两列布局，一列靠左浮动，一列靠右浮动，左边那列就是20个课程框，
+右边那列就是机构介绍和热门课程；*/
+
+/*主要用来设置背景颜色,因为左右间距的背景色不是白色，
+在外建立了一个父容器，设置padding，
+这样就能填充左右间距的背景色，整体内容居中*/
+.course-grand { 
+	margin-top: -21px;	
+	padding: 91px 0 120px;
+	background: #f8f8f8;
+}
+.course-parent {
+	width: 1205px;
+	margin: 0 auto;
+}
+/*整个课程列表框，包括tab和20个课程列表框往左浮动*/
+.course {
+	float: left;
+	width: 981px;
+}
+@media screen and (max-width: 1205px) {
+	.course-parent {
+		width: 960px;
+	}
+	.course {
+		width: 735px;
+	}
+}
+/*课程容器设置，清除浮动*/
+.course-parent:after {
+	content: '.';
+	height: 0;
+	visibility: hidden;
+	display: block;
+	clear: both;
+}
+/*课程类别元素设置*/
+.tab {
+	display: inline-block;
+	font-size: 20px;
+	background: #fff;
+	border-bottom: 1px solid #d4d3d3;
+	box-shadow: 0 1px #ecebeb;
+}
+.tab:after {
+	content: '.';
+	height: 0;
+	visibility: hidden;
+	display: block;
+	clear: both;
+}
+/*tab中两个元素浮动*/
+.tab li{
+	float: left;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	list-style: none;
+	color: #666;
+}
+#firstTab {
+	box-shadow: -1px 0 #ecebeb;
+}
+#secondTab {
+	box-shadow: 1px 0 #ecebeb;
+}
+/*tab选中元素样式设置*/
+li.tab-selected {
+	background: #39a030;
+	color: #fff;
+}
+.tab li:hover {
+	cursor: pointer;
+}
+/*选中的tab，hover上去后鼠标变成不可选的*/
+li.tab-selected:hover {
+	cursor: text;
+}
+/*20门课程整体靠左浮动*/
+.course-list {
+	float: left;
+	margin-top: 7px;
+}
+/*每门课程的设置，靠左浮动*/
+/*20个课程列表靠左浮动，由于宽度的限制，
+所以多余的会往下排，正好每行四个，排五列*/
+.course-list li {
+	float: left;
+	width: 225px;
+	height: 228px;
+	margin: 0 18px 20px 0;
+	border: 1px solid #e6e6e6;
+	border-top: 0;
+	box-shadow: 0 1px #f1f1f1;
+	/*低版本IE不支持box-shadow，通过border来加深边框*/
+	border-bottom: 2px solid #e6e6e6\9;
+	background: #fff;
+}
+.course-list li:hover {
+	outline: 1px dashed #ea5661;
+}
+.course-list li img {
+	width: 223px;
+	padding-left: 1px;
+	max-height: 125px;
+}
+/*课程里面文字的设置*/
+.course-list li p {
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 12px;
+	margin: 8px 0 0 5px;
+}
+/*课程名称样式设置，
+这里之所以写两个选择器是为了提高其优先级
+否则会被上面的样式被覆盖掉*/
+.course-list .list-name {
+	text-overflow: ellipsis;
+	color: '#5a5a5a';
+}
+/*课程提供者样式设置*/
+.course-list .list-provider {
+	color:  #999;
+}
+/*课程价格设置*/
+.course-list .list-price {
+	color: #ff3f00;
+	font-size: 11px;
+	margin-top: 0;
+}
+/*共学习人数设置*/
+.course-list .list-learnerCount {
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	padding: 0 3px 0 18px;
+	font-size: 10px;
+	color: #999;
+	border: 1px solid #dcdcdc;
+	background: url(../images/main.png) no-repeat -280px -71px;
+}
+
+/*整个装页码的父容器往右浮动*/
+.course-page {
+	float: right;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 31px;
+	margin-right: 22px;
+	font-size: 14px;
+}
+/*装数字部分的页码在其父容器中靠左浮动*/
+.page {
+	float: left;
+}
+/*装数字的里面每个页面标签设置，都往左浮动*/
+.page a {
+	float: left;
+	width: 20px;
+	margin: 0 5.12px;
+	text-align: center;	
+}
+.page a:hover {	
+	cursor: pointer;
+	color: #fff;
+	background: #9dd8b1;
+	
+}
+/*上一页下一页样式控制*/
+a.pageTurn, a.pageTurn:hover{
+	width: 30px;
+	height: 20px;
+	margin: 0;
+	text-align: center;
+	background: #9dd8b1;
+	color: #fff;
+}
+/*省略号样式的控制，当前页为第一页或最大页，
+前一页和后一页变为变为不可点击的*/
+a.out {
+	background: #ddd;
+}
+a.blank:hover, a.out:hover {
+	cursor: text;
+	background: #ddd;	
+}
+a.blank:hover {
+	color: #000;
+	background: #f8f8f8;
+}
+/*当前页码的样式*/
+.on {
+	cursor: text;
+	color: #39a030;
+}
+/*当前页码hover上去时变为不可点击*/
+/*之所以加行a是因为要提高优先级，因为之前对里面的所有的a进行hover设置*/
+a.on:hover {
+	cursor: text;
+	color: #39a030;
+	background: #f8f8f8;
+}
+/*跳转页码的控制，页码数字部分往左浮动，文本框就往右浮动*/
+#jump {
+	float: right;
+}
+/*文本输入框的控制*/
+#pageText {
+	width: 30px;
+}
+/*确定的设置*/
+#pageBtn {
+	display: inline-block;/
+	width: 30px;
+}
+#pageBtn:hover {
+	cursor: pointer;
+}
+
+/*课程列表hover上去后浮动列表框的设置*/
+.floatCourse {
+	display: none;
+	position: absolute;
+	width: 479px;
+	min-height: 242px;
+	font-size: 12px;
+	z-index: 998;
+	color: #666;
+	border: 2px solid #c1c0c0;
+	box-shadow: 0 1px #f8f8f8;
+	background: #fff;
+}
+/*浮动列表框图片的设置*/
+.floatCourse img {
+	float: left;
+	width: 223px;
+	max-height: 125px;
+	margin: 11px 19px 0 11px;
+}
+/*浮动列表框标题设置*/
+.floatCourse .title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 18px;
+	margin-top: 11px;
+	color: #333;
+}
+.floatCourse .learnerCount {
+	margin: 17px 0 0 255px;
+	padding-left: 15px;
+	background: url(../images/main.png) no-repeat -284px -71px;
+}
+.floatCourse .provider {
+	margin: 13px 0 8px;
+}
+.floatCourse .description {
+	margin-top: 38px;
+	padding: 0 32px 20px 20px;
+	font-size: 14px;
+	line-height: 24px;
+	background: #f8f8f8;
+}
+/*机构介绍样式设置，右边那列靠右浮动*/
+.orgIntro {
+	position: relative;
+	float: right;
+	width: 223px;
+	height: 229px;
+	margin: 0 0 21px -18px;
+	border: solid 1px #ddd;
+	box-shadow: 0 1px #d4d3d3;
+	border-bottom: solid 2px #ddd\9;
+	border-top: 0;
+	background: #fff;
+}
+.introText {
+	height: 55px;
+	line-height: 55px;	
+	padding-left: 22px;
+	color: #333;
+	font-size: 16px;
+	border-bottom: 1px solid #ddd;
+}
+.videoText {	
+	margin: 20px 0 9px;
+	padding-left: 22px;
+	font-size: 14px;
+	color: #666;
+}
+.orgIntro img {
+	width: 180px;
+	height: 110px;
+	margin-left: 22px;
+	background: url(../images/orgIntro.png) 0 0;
+}
+.orgIntro img:hover {
+	cursor: pointer;
+	background: url(../images/orgIntro.png) -190px 0;
+}
+/*开始视频并不显示，而是点击图片后，视频开始播放*/
+.videoNone {
+	display: none;
+}
+.videoPlay {
+	position: fixed;
+	left: 50px;
+	top: 10px;
+	width: 950px;
+	height: 650px;
+	z-index: 1000;
+	background: #fff;
+}
+.orgIntro video {
+	position: absolute;	
+	top: 40px;
+	/*因为IE中video标签的定位方式不一样*/
+	top: 69px\9; 
+	left: 31px;
+	width: 889px;
+	height: 567px;
+}
+/*视频播放时上方文字的设置*/
+.videoTop {
+	position: absolute;
+	left: 30px;
+	top: 29px;
+	font-size: 18px;
+	color: #545454;
+}
+/*关闭视频的按钮设置*/
+#shutVideo {
+	position: absolute;
+	top: 13px;
+	right: 12px;
+	padding: 0;
+	height: 9px;
+	width: 9px;
+	background: url(../images/main.png) -254px -96px #fff;
+}
+/*热门列表设置，右边那列往右浮动*/
+.hotRank {
+	float: right;
+	width: 223px;
+	box-sizing: border-box;
+	padding-bottom: 20px;
+	border: solid 1px #ddd;
+	box-shadow: 0 1px #d4d3d3;
+	border-top: 0;
+	background: #fff;
+}
+div.hotRank:hover {
+	box-shadow: 1px 1px #d4d3d3;
+	border-right: 2px solid #ddd\9;
+}
+/*最热排行样式设置*/
+.hot-title {
+	padding-left: 20px;
+	height: 56px;
+	line-height:56px;
+	font-size: 16px;
+	color: #333;
+	border-bottom: solid 1px #ddd;
+}
+/*每个热门设置*/
+.hotRank li {
+	height: 50px;
+	margin: 21px 20px 0 20px;
+}
+.hotRank img {
+	float: left;
+	height: 50px;
+	width: 50px;
+	margin-right: 12px;
+}
+/*每个热门里面的title设置*/
+.hotRank .title {
+	margin: 0 0 10px 0;
+	padding: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 14px;
+}
+.hotRank .learnerCount {
+	margin-left: 62px;
+	padding-left: 16px;
+	font-size: 10px;
+	color: #999;
+	background: url(../images/main.png) no-repeat -284px -71px;
+	/*ie的位置有些偏*/
+	background-position: -284px -73px\9;
+}
+
+/****************************************************/
+/*底部样式设置，布局：因为是四列，所以每列设置往左浮动*/
+footer {
+	width: 100%;
+	height: 180px;
+	padding-top: 82px;
+	color: #bebfc0;
+	background: #2c3339;
+}
+/*底部元素li p a a:hover统一设置一下*/
+footer li {
+	margin-top: 16px;
+	font-size: 14px;
+}
+footer p {
+	font-size: 12.50px;
+}
+footer a {
+	color: inherit;
+	text-decoration: none;
+}
+footer a:hover {
+	text-decoration: underline;
+}
+/*底部整个内容区设置一下，固定宽度，居中*/
+.content {
+	width: 1205px;
+	height: 100%;
+	margin: 0 auto;
+}
+@media screen and (max-width: 1205px) {
+	.content {
+		width: 960px;
+	}
+}
+/*edu，也就是第一列设置，整体靠左浮动，其中四列都设置靠左浮动*/
+.edu {
+	float: left;
+	padding : 1.08% 0 0 4.15%;	
+}
+p.edu-img {
+	color: #39a030;
+	font-size: 22px;
+}
+.edu-img img {
+	position: relative;
+	top: 3px;
+	width: 79px;
+	height: 20px;
+	background: url(../images/main.png) 0 -140px;
+}
+.icp {	
+	margin: 29px 0 14px;
+}
+/*第二列样式设置*/
+.friends {
+	float: left;
+	padding-left: 12.61%;	
+}
+/*第三列设置*/
+.foot-about {
+	float: left;
+	padding-left: 8.22%;
+}
+.foot-about img {
+	width: 20px;
+	height: 16px;
+	margin-left: 11px;
+	background: url(../images/main.png) -254px -74px;
+}
+/*第四列样式设置*/
+.foot-more {
+	float: left;
+	padding-left: 6.06%;
+}
