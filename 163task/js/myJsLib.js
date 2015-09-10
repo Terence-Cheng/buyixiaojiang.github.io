@@ -154,9 +154,9 @@ function delCookie (name) {
 function fadein (element, DELAY, totalTime) {
 	//如果delay太小，低于浏览器默认的那个最小值的话，则会失效
 	//会变成浏览器默认的最小值,一般来说取浏览器是刷新频率，16.67即可
-	DELAY = DELAY < 16 ? 16 : DELAY;
-	var dita = DELAY / totalTime;
+	DELAY = DELAY < 16 ? 16 : DELAY;	
 	var offset = 0;
+	var dita = (1 - offset) * DELAY / totalTime;
 	if(typeof(element) == 'string')
 		element=document.getElementById(element);
 	var step = function (){
@@ -170,9 +170,33 @@ function fadein (element, DELAY, totalTime) {
 		}
 
 	}
-	setOpacity(element, 0);
+	setOpacity(element, offset);
 	var intervalID = setInterval(step, DELAY);
 }
+function fadeout (element, DELAY, totalTime) {
+	//如果delay太小，低于浏览器默认的那个最小值的话，则会失效
+	//会变成浏览器默认的最小值,一般来说取浏览器是刷新频率，16.67即可
+	DELAY = DELAY < 16 ? 16 : DELAY;	
+	var offset = 1;
+	var dita = (offset) * DELAY / totalTime;
+	if(typeof(element) == 'string')
+		element=document.getElementById(element);
+	var step = function (){
+		var tmpOffset = offset - dita; 
+		if(tmpOffset > 0){
+			setOpacity(element, tmpOffset);
+			offset = tmpOffset;
+		} else {
+			setOpacity(element, 0);
+			// element.style.display = 'none';
+			clearInterval (intervalID);
+		}
+
+	}
+	setOpacity(element, offset);
+	var intervalID = setInterval(step, DELAY);
+}
+
 
 //设置透明度函数，因为IE8，IE9不支持Opacity
 function setOpacity (obj,val) {

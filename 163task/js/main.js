@@ -13,15 +13,16 @@ var cancelFlw = hasFollowed.getElementsByTagName('a')[0];//获取取消关注链
 var srcs = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
 var hrefs = ["http://open.163.com/", "http://study.163.com/", "http://www.icourse163.org/"];
 var index = 1; //轮播图的下标,默认为0，下一个就是1，所以初始化为1
-var img = getElementsByClassName('banner1')[0]; //轮播图的img标签
-var anchor = getElementsByClassName('banner1')[1];	//轮播图的a标签	
+var bannerImg = getElementsByClassName('bannerImg')[0];
+var img = bannerImg.getElementsByTagName('img')[0]; //轮播图的img标签
+var anchor = bannerImg.getElementsByTagName('a')[0];	//轮播图的a标签	
 var intervalImg = setInterval(takeTurns, 5000); //每隔5秒切换轮播图
 var circles = getElementsByClassName('circle'); //获得图片中的三个小圆点
 
 /**************************************************************/ 
 //以下是登录框的相关元素
 var login = $('login'); //登陆元素
-var shutLogin = login.getElementsByTagName('div')[0]; //关闭登录框的元素
+var shutLogin = login.getElementsByTagName('i')[0]; //关闭登录框的元素
 var mask = getElementsByClassName('mask')[0]; //登陆时的遮罩元素
 var actInt = $('account'); //登陆框账号输入框的元素
 var psdInt = $('password');//密码输入框的元素
@@ -34,7 +35,7 @@ var pwdSpan = $('pwdSpan'); //有关密码的span标签
 //顶部右侧导航元素
 var banRights = getElementsByClassName('ban-right', document.getElementsByTagName('nav')[0])[0];
 var bRAnchors = banRights.getElementsByTagName('a'); //顶部右侧导航超链接元素
-var bRImg = banRights.getElementsByTagName('img')[0];//顶部右侧导航的图片hover元素
+var bRImg = banRights.getElementsByTagName('i')[0];//顶部右侧导航的图片hover元素
 
 /**************************************************************/ 
 //以下为有关课程的相关变量
@@ -68,10 +69,10 @@ var pagePar = $('page');//盛放页码的父容器
 /**************************************************************/ 
 //以下是机构介绍
 var orgIntro = getElementsByClassName('orgIntro')[0]; //机构介绍的祖辈元素
-var orgImg = orgIntro.getElementsByTagName('img')[0]; //获取机构介绍的图片
+var orgImg = orgIntro.getElementsByTagName('i')[0]; //获取机构介绍的图片
 var orgVideo = orgIntro.getElementsByTagName('video')[0]; //获取机构介绍的视频
 var orgVideoPar = orgVideo.parentNode; //viedo标签的父元素
-var videoImg = orgVideoPar.getElementsByTagName('img')[0]; //视频里面的关闭图标
+var videoImg = $('shutVideo');
 
 /**************************************************************/ 
 //以下是热门列表参数定义
@@ -145,11 +146,15 @@ function followedAfter () {
 addEvent(actInt, 'blur', function () {
 	if (!actInt.value) {
 		actSpan.style.display = 'inline-block';
+		actSpan.style.color = 'red';
+		actSpan.innerHTML = '请输入账号';
 	}
 });
 addEvent(psdInt, 'blur', function () {
 	if (!psdInt.value) {
 		pwdSpan.style.display = 'inline-block';
+		pwdSpan.style.color = 'red';
+		pwdSpan.innerHTML = '请输入密码';
 	}
 });
 
@@ -268,20 +273,25 @@ function imgChange (i) {
 //把轮播图的src和链接地址存到数组里面了，通过分别循环数组下标
 //来达到轮播的目的
 function takeTurns () {
+	//取得整个图片的个数
+	// var length = img.length;
+	//取得前一张图片的索引
+	// var pre = (index + length - 1) % length;
 	img.setAttribute('src', srcs[index]);
 	anchor.setAttribute('href', hrefs[index]);
 	//把小圆圈里面cir-selected类选择器去除
-	for (var j = 0; j < circles.length; j++) {
-		removeClassName(circles[j], 'cir-selected');
-	}
+	for (var i = 0; i < 3; i++)
+		removeClassName(circles[i], 'cir-selected');		
 	//把当前的小圆圈加上cir-selected类选择器
 	circles[index].className += ' cir-selected';
-	//index存放下一张要播放的图片和链接的索引
-	index = (index + 1) % 3;
 	//淡入函数在我myJsLib库里面
 	//第一个参数为淡入元素，第二个参数为相邻两次改变透明度的间隔时间，
 	//第三个参数为总共的时间
-	fadein(img, 17, 500);
+	// fadeout(img[pre], 20, 500);
+	fadein(img, 20, 500);
+	//index存放下一张要播放的图片和链接的索引
+	index = (index + 1) % 3;
+
 };
 
 //鼠标进入轮播图的时候，则暂停图片轮播

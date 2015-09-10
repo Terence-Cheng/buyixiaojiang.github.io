@@ -25,6 +25,9 @@ img {
 footer, header, nav {
 	display:block;
 }
+i {
+	display: inline-block;
+}
 /****************************************************/
 /*登陆框的遮罩布局,默认不显示，再就是提高层级*/
 .mask {
@@ -63,6 +66,7 @@ footer, header, nav {
 	width: 293px;
 	height: 218px;
 }
+
 /*文本框和按钮的设置*/
 #login input, #login button {
 	display: block;
@@ -82,12 +86,16 @@ footer, header, nav {
 	/*不设置位置是因为默认为left top*/
 	background: url(../images/main.png);
 }
+#login button:hover {
+	cursor: pointer;
+}
 /*账号输入框*/
 #account {
 	margin-top: 21px;
 }
 .loginSpan {
 	position: absolute;
+	left: 5px;
 	color: #d8d8d8;	
 }
 #actSpan {
@@ -110,7 +118,7 @@ footer, header, nav {
 	background: url(../images/main.png) -254px -96px;
 }
 /*关闭按钮的hover效果*/
-div.log-shut:hover {
+.log-shut:hover {
 	cursor: pointer;
 }
 
@@ -164,13 +172,13 @@ header a {
 	color: #484848;
 }
 /*不再提醒关闭按钮的设置*/
-div.header-shut {
+.header-shut {
 	display: inline-block;
 	width: 11px;
 	height: 9px;
 	background: url(../images/main.png) -254px -96px;	
 }
-div.header-shut:hover {
+.header-shut:hover {
 	cursor: pointer;
 }
 
@@ -294,6 +302,7 @@ p.hasFollowed:hover {
 .navThree:hover{
 	color: #21a557; 
 }
+
 /*右边的放大镜的设置*/
 .search {
 	position: relative;
@@ -374,9 +383,11 @@ p.hasFollowed:hover {
 /*整体布局就是左边的靠左浮动，右边的靠右浮动，中间居中，
 这样子浏览器在放大或缩小窗口的时候不至于错位*/
 .three {
+	/*float: left;*/
 	width: 1205px;
 	height: 297px;
 	margin: 0 auto;
+	padding: 0;
 	text-align: center;
 }
 @media screen and (max-width: 1205px) {
@@ -386,7 +397,7 @@ p.hasFollowed:hover {
 	}
 }
 /*里面的每个图片靠左浮动*/
-.three img {
+.three i {
 	float: left;
 	margin-top: 61px;
 }
@@ -415,7 +426,7 @@ p.hasFollowed:hover {
 	float: left;
 	text-align: left;
 }
-.thr-left img {
+.thr-left i {
 	width: 80px;
 	height: 80px;
 	background: url(../images/main.png) 0 -50px;
@@ -425,7 +436,7 @@ p.hasFollowed:hover {
 	display: inline-block;
 	text-align: left;
 }
-.thr-middle img {
+.thr-middle i {
 	width: 80px;
 	height: 80px;
 	background: url(../images/main.png) -85px -50px;	
@@ -435,7 +446,7 @@ p.hasFollowed:hover {
 	float: right;
 	text-align: left;
 }
-.thr-right img {
+.thr-right i {
 	width: 80px;
 	height: 80px;
 	background: url(../images/main.png) -170px -50px;	
@@ -780,13 +791,13 @@ a.on:hover {
 	font-size: 14px;
 	color: #666;
 }
-.orgIntro img {
+.orgIntro i {
 	width: 180px;
 	height: 110px;
 	margin-left: 22px;
 	background: url(../images/orgIntro.png) 0 0;
 }
-.orgIntro img:hover {
+.orgIntro i:hover {
 	cursor: pointer;
 	background: url(../images/orgIntro.png) -190px 0;
 }
@@ -928,7 +939,7 @@ p.edu-img {
 	color: #39a030;
 	font-size: 22px;
 }
-.edu-img img {
+.edu-img i {
 	position: relative;
 	top: 3px;
 	width: 79px;
@@ -948,7 +959,7 @@ p.edu-img {
 	float: left;
 	padding-left: 8.22%;
 }
-.foot-about img {
+.foot-about i {
 	width: 20px;
 	height: 16px;
 	margin-left: 11px;
