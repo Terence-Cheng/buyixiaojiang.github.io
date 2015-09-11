@@ -5,14 +5,14 @@
 	<meta name='Keywords' content='网易教育产品，网易公开课，云课堂，中国大学MOOC'>
 	<meta name='Description' content='网易教育产品，包括网易公开课，推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解，深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台；云课堂，网易旗下大型学习在线平台，该平台面向学习者提供海量免费、优质课程，创新的个性化学习体验，自由开放的交流互动环境；中国大学MOOC，推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解，深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。'>
 	<title>EDU网易教育</title>
-	<!-- 兼容ie语义化标签，footer header nav -->
+	<!-- 兼容ie语义化标签-->
 	<!--[if IE 8]>
 	<script> 
 	   (function() {
 	     if (! 
 	     /*@cc_on!@*/
 	     0) return;
-	     var e = "footer, header, nav".split(', ');
+	     var e = "footer, header, nav, section, article, aside, address".split(', ');
 	     var i= e.length;
 	     while (i--){
 	         document.createElement(e[i])
@@ -24,9 +24,9 @@
 </head>
 <body>
 	<!-- 登陆框的遮罩标签 -->
-	<div class='mask'></div>
+	<section class='mask'></section>
 	<!-- 登录框标签 -->
-	<div id='login'>
+	<section id='login'>
 		<i class='log-shut'></i>
 		<div id='form'>
 			<h3>登陆网易云课堂</h3>
@@ -35,7 +35,7 @@
 			<input id='password' type='password'><span id='pwdSpan' class='loginSpan'>密码</span>
 			<button type='submit' id='submit'></button>
 		</div>
-	</div>
+	</section>
 	<!-- 顶部通知条标签,使用了语义化标签，外面多加一个父容器是为了让背景颜色布满到宽度的100% -->
 	<header>
 		<div class='clearfix'>
@@ -49,7 +49,7 @@
 	<!-- 顶部导航标签 -->
 	<nav>
 		<div class='ban-nav'>
-			<p><i class='ban-eduImg'></i> 网易教育产品部</p>
+			<h1><i class='ban-eduImg'></i> 网易教育产品部</h1>
 			<button type='button' class='follow'></button>
 			<!-- 已关注标签，默认不显示，成功关注后显示 -->
 			<p class='hasFollowed'>
@@ -66,7 +66,7 @@
 		</div>	
 	</nav>
 	<!-- 轮播图标签 -->
-	<div class='bannerImg'>
+	<section class='bannerImg'>
 		<!-- img和a只设置了一个，在js里只改变它的src和href属性即可 -->
 		<img src="images/banner1.jpg" class='banner1' alt='网易教育产品'>
 		<a href="http://open.163.com/" class='banner1' target='_blank' rel='nofollow'></a>				
@@ -74,13 +74,13 @@
 		<div class='circle circle1 cir-selected'><a href="http://open.163.com/" target='_blank' rel='nofollow'></a></div>
 		<div class='circle circle2'><a href="http://study.163.com/" target='_blank' rel='nofollow'></a></div>
 		<div class='circle circle3'><a href="http://www.icourse163.org/" target='_blank' rel='nofollow'></a></div>
-	</div>	
+	</section>	
 	<!-- 三个课堂学习的介绍 -->
-	<div class='three'>
+	<section class='three'>
 			<div class='thr-left'>
 				<i></i>
 				<div class="oneThird">				
-					<h3>网易公开课</h3>
+					<h2>网易公开课</h2>
 					<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解，深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。
 					</p>
 					<a href="http://open.163.com/" target='_blank' rel='nofollow'>了解更多 &gt;</a>
@@ -89,7 +89,7 @@
 			<div class='thr-middle'>
 				<i></i>
 				<div class="oneThird">				
-					<h3>云课堂</h3>
+					<h2>云课堂</h2>
 					<p>网易旗下大型学习在线平台，该平台面向学习者提供海量免费、优质课程，创新的个性化学习体验，自由开放的交流互动环境。
 					</p>
 					<a href="http://study.163.com/" target='_blank' rel='nofollow'>了解更多 &gt;</a>
@@ -98,34 +98,32 @@
 			<div class='thr-right'>
 				<i></i>	
 				<div class="oneThird">
-					<h3>中国大学MOOC</h3>
+					<h2>中国大学MOOC</h2>
 					<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解，深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。
 					</p>
 					<a href="http://www.icourse163.org/" target='_blank' rel='nofollow'>了解更多 &gt;</a>
 				</div>
 			</div>
-	</div>	
+	</section>	
 	<!-- 工作图片的展示，第一个和最后一个加了类名是在响应式布局时用到 -->
-	<div class="workingSpace">
+	<section class="workingSpace">
 		<img src="images/1_gym.jpg" alt="体育馆" class='working-first'>
 		<img src="images/2_meeting.jpg" alt="会议室">
 		<img src="images/3_library.jpg" alt="图书馆">
 		<img src="images/4_camera.jpg" alt="摄像">
 		<img src="images/5_food.jpg" alt="食物" class='working-last'>
-	</div>
+	</section>
 	<!-- 有关课程的标签 -->
 	<!-- 最外面的grand元素是为了让整个背景色填充到宽度的100% -->
-	<div class='course-grand'>
+	<section class='course-grand'>
 		<!-- parent元素是整个课程包括右边热门课程的父容器元素 -->
-		<div class='course-parent'>
+		<article class='course-parent'>
 			<!-- course是课程的父元素，包括tab切换和每个列表框还有浮动列表框 -->
 			<div class='course '>
-				<div class='tab'>
-					<ul>
-						<li id='firstTab' class='tab-selected'>产品设计</li>
-						<li id='secondTab'>编程语言</li>
-					</ul>
-				</div>
+				<ul class='tab'>
+					<li id='firstTab' class='tab-selected'>产品设计</li>
+					<li id='secondTab'>编程语言</li>
+				</ul>
 				<!-- 以下是课程列表的元素，所有的li标签通过Js来生成 -->
 				<ul class='course-list'>
 				</ul>
@@ -142,7 +140,7 @@
 				<!-- 课程列表hover上去后，浮动框的标签 -->
 				<div class='floatCourse'>
 					<img src="" alt='课程图片'>
-					<p class='title'></p>
+					<h2 class='title'></h2>
 					<p class='learnerCount'></p>
 					<p class='provider'></p>
 					<p></p>
@@ -150,8 +148,8 @@
 				</div>
 			</div>
 			<!-- 机构介绍的父元素 -->
-			<div class='orgIntro'>
-				<div class='introText'><p>机构介绍</p></div>
+			<aside class='orgIntro'>
+				<h2 class='introText'>机构介绍</h2>
 				<div class='video'>
 					<p class='videoText'>观看下面的视频来了解吧 : </p>
 					<i></i>
@@ -162,10 +160,10 @@
 						<i id='shutVideo'></i>
 					</div>
 				</div>
-			</div>
+			</aside>
 			<!-- 热门课程的父元素 -->
-			<div class='hotRank'>
-				<div class='hot-title'>最热排行</div>
+			<aside class='hotRank'>
+				<h2 class='hot-title'>最热排行</h2>
 				<ul class='list'>
 					<li><img src="" alt='课程图片'><p class='title'></p><p class='learnerCount'></p></li>
 					<li><img src="" alt='课程图片'><p class='title'></p><p class='learnerCount'></p></li>
@@ -178,16 +176,16 @@
 					<li><img src="" alt='课程图片'><p class='title'></p><p class='learnerCount'></p></li>
 					<li><img src="" alt='课程图片'><p class='title'></p><p class='learnerCount'></p></li>
 				</ul>
-			</div>
-		</div>
-	</div>
+			</aside>
+		</article>
+	</section>
 	<!-- 底部标签，html5语义化标签，最外面这个父元素就是为了填充整个背景色到浏览器宽度的100% -->
 	<footer>
 		<!-- 底部元素的父容器 -->
 		<div class='content'>
 			<!-- 第一列 -->
 			<div class='edu'>
-				<p class='edu-img'><i></i>网易教育产品部</p>
+				<h1 class='edu-img'><i></i>网易教育产品部</h1>
 				<p class='icp'>©2014 icourse163.org 浙ICP备08114786号-1</p>
 				<p class='icourse'>icourses.cn 京ICP备12020869号-2 京公网安备110102000459-2</p>
 			</div>
@@ -201,14 +199,14 @@
 				</ul>
 			</div>
 			<!-- 第三列，关于我们 -->
-			<div class='foot-about'>
+			<address class='foot-about'>
 				<p>我们 ：</p>
 				<ul>
 					<li><a href="">关于</a></li>
 					<li><a href="">联系</a></li>
 					<li><a href="">备注</a><i></i></li>
 				</ul>
-			</div>
+			</address>
 			<!-- 第四列，更多 -->
 			<div class='foot-more'>
 				<p>更多 ：</p>

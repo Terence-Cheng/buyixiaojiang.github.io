@@ -428,6 +428,7 @@ function mouseroverCourse (e) {
 	else 
 		i = target.parentNode.id;
 	//获取浮动框的元素
+	var floatH2 = floatCourse.getElementsByTagName('h2')[0];
 	var floatP = floatCourse.getElementsByTagName('p');
 	var floatImg = floatCourse.getElementsByTagName('img');
 	//设置课程框的hover效果
@@ -439,16 +440,16 @@ function mouseroverCourse (e) {
 	}, 100);
 	//浮动框相关数据的设置，还有添加类名，进行样式设置
 	floatImg[0].src = result.list[i].middlePhotoUrl;
-	floatP[0].innerHTML = result.list[i].name;
-	floatP[0].className = 'title';
-	floatP[0].setAttribute('title', result.list[i].name);
-	floatP[1].innerHTML = result.list[i].learnerCount + '人在学';
-	floatP[2].innerHTML = '发布者 ： ' + result.list[i].provider;
+	floatH2.innerHTML = result.list[i].name;
+	floatH2.className = 'title';
+	floatH2.setAttribute('title', result.list[i].name);
+	floatP[0].innerHTML = result.list[i].learnerCount + '人在学';
+	floatP[1].innerHTML = '发布者 ： ' + result.list[i].provider;
 	if (!result.list[i].categoryName) {
 		result.list[i].categoryName = '无'
 	}
-	floatP[3].innerHTML = '分类 ： ' + result.list[i].categoryName;
-	floatP[4].innerHTML = result.list[i].description;
+	floatP[2].innerHTML = '分类 ： ' + result.list[i].categoryName;
+	floatP[3].innerHTML = result.list[i].description;
 	
 };
 

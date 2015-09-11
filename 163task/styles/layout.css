@@ -22,11 +22,14 @@ li {
 img {
 	border: 0;
 }
-footer, header, nav {
+footer, header, nav, section, article, aside, address {
 	display:block;
 }
 i {
 	display: inline-block;
+}
+address {
+	font-style: normal;
 }
 /****************************************************/
 /*登陆框的遮罩布局,默认不显示，再就是提高层级*/
@@ -207,9 +210,13 @@ nav {
 nav p {
 	display: inline-block;
 }
+nav h1 {
+	display: inline-block;
+	font-size: 22px;
+}
 /*绿色的edu设置图片*/
 .ban-eduImg {
-	/*设置相对定位是因为图片的位置靠上了*/
+	/*设置相对定位是因为图片的位置靠上了*/	
 	position: relative;
 	top: 3px;
 	width: 70px;
@@ -330,6 +337,7 @@ p.hasFollowed:hover {
  .bannerImg {
 	position: relative;
 	text-align: center;
+	background: #333;
 }
 /*img标签充满整个父容器的宽度，但同时设置一个最大宽度，
 以免浏览器尺寸太大，导致图片太大失真*/
@@ -401,7 +409,7 @@ p.hasFollowed:hover {
 	float: left;
 	margin-top: 61px;
 }
-.three h3 {
+.three h2 {
 	font-size: 22px;
 	color: #333;
 }
@@ -748,6 +756,7 @@ a.on:hover {
 	font-size: 18px;
 	margin-top: 11px;
 	color: #333;
+	font-weight: normal;
 }
 .floatCourse .learnerCount {
 	margin: 17px 0 0 255px;
@@ -782,6 +791,7 @@ a.on:hover {
 	line-height: 55px;	
 	padding-left: 22px;
 	color: #333;
+	font-weight: normal;
 	font-size: 16px;
 	border-bottom: 1px solid #ddd;
 }
@@ -863,6 +873,7 @@ div.hotRank:hover {
 	line-height:56px;
 	font-size: 16px;
 	color: #333;
+	font-weight: normal;
 	border-bottom: solid 1px #ddd;
 }
 /*每个热门设置*/
@@ -935,7 +946,7 @@ footer a:hover {
 	float: left;
 	padding : 1.08% 0 0 4.15%;	
 }
-p.edu-img {
+h1.edu-img {
 	color: #39a030;
 	font-size: 22px;
 }
