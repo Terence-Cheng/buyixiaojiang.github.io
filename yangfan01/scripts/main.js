@@ -85,16 +85,16 @@ function getBomb () {
 	getBombTimeout = setTimeout(getBomb, rnd(100, 700));
 }
 //移动端主角移动事件注册，记录刚刚进入触摸屏的时候的初始位置,主要用来判断是否接触到了主角
-addEventListener ("touchstart", function (e) {
+addEvent(window, "touchstart", function (e) {
 	touch.x = e.touches[0].clientX;
 	touch.y = e.touches[0].clientY;				
 }, false);
 //删除move属性，不再更新主角位置
-addEventListener("touchend", function (e) {
+addEvent(window, "touchend", function (e) {
 	delete keysDown['move'];
 }, false);
 //记录手指移动的位置
-addEventListener ("touchmove", function (e) {
+addEvent(window, "touchmove", function (e) {
 	e.preventDefault(); //取消掉浏览器默认事件
 	endX = e.touches[0].clientX; //记录手指最后的位置
 	if (isCollide(cat, touch)){
@@ -103,11 +103,11 @@ addEventListener ("touchmove", function (e) {
 }, false);
 
 //pc端键盘按下事件注册
-addEventListener ("keydown", function (e) {
+addEvent(window, "keydown", function (e) {
 	keysDown[e.keyCode] = true;
 }, false);
 //键盘抬起事件注册
-addEventListener("keyup", function (e) {
+addEvent(window, "keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
