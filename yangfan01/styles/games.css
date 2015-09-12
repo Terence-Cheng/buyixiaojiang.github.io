@@ -1,10 +1,11 @@
 * {
 	margin: 0;
 	padding: 0;
-	background-color: #ff9588;
+	background: #ff9588;
 }
-
-
+body {
+	100%;
+}
 div{
 	position: absolute;
     width: 50%;
@@ -37,8 +38,6 @@ button {
 }
 p {
 	margin-top: 10px;
-	/*background-color: white;*/
-	/*color: white;*/
 }
 b {
 	font-size: 1.3em;
