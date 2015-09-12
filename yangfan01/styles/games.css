@@ -1,10 +1,13 @@
 * {
 	margin: 0;
 	padding: 0;
-	background: #ff9588;
+	/*background: #ff9588;*/
 }
 body {
-	100%;
+	width: 100%;
+	height:100%;
+	background: #e0ffff;
+	text-align: center;
 }
 div{
 	position: absolute;

@@ -32,7 +32,13 @@ var touch = { //触屏事件用到
 }
 /************************************************************************/
 //画布的处理
-canvas.width = window.innerWidth - 20;
+//
+if (window.innerWidth > 800) {
+	canvas.width = 800;
+} else {
+	canvas.width = window.innerWidth;
+}
+
 canvas.height = window.innerHeight - 5;		
 
 /************************************************************************/
@@ -60,9 +66,9 @@ addEvent(button, 'click', function () {
 	isGolding = 0; //三个配角与主角默认暂未碰撞
 	isGirling = 0;
 	isBombing = false
-	goldPool = new Pool(20); //生成三个配角对象池，并初始化，后面的数字代表个数
+	goldPool = new Pool(12); //生成三个配角对象池，并初始化，后面的数字代表个数
 	goldPool.init();
-	girlPool = new Pool(8);
+	girlPool = new Pool(5);
 	girlPool.init();
 	bombPool = new Pool(5);
 	bombPool.init(); 
@@ -74,15 +80,15 @@ addEvent(button, 'click', function () {
 })
 function getGold () {
 	goldPool.get();
-	getGoldTimeout = setTimeout(getGold, rnd(10,500)); //下一个元宝生成时间随机
+	getGoldTimeout = setTimeout(getGold, rnd(200,1000)); //下一个元宝生成时间随机
 }
 function getGirl () {
 	girlPool.get();
-	getGirlTimeout = setTimeout(getGirl, rnd(100,700));
+	getGirlTimeout = setTimeout(getGirl, rnd(300,1000));
 }
 function getBomb () {
 	bombPool.get();
-	getBombTimeout = setTimeout(getBomb, rnd(100, 700));
+	getBombTimeout = setTimeout(getBomb, rnd(300, 500));
 }
 //移动端主角移动事件注册，记录刚刚进入触摸屏的时候的初始位置,主要用来判断是否接触到了主角
 addEvent(window, "touchstart", function (e) {
