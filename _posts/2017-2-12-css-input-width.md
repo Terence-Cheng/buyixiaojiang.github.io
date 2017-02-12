@@ -36,7 +36,7 @@ keywords: input, width
   * 设置子元素宽度百分比
     * 先看代码 
     
-         ```html
+         ```
          <div style="display: inline-block;border: 1px solid red;">
             <input type="text" style="width: 50%;background: black">
         </div>
