@@ -1,4 +1,4 @@
-<!--{% if page.comments != false %}-->
+{% if page.comments != false %}
   {% case site.comments_provider %}
     {% when 'disqus' %}
       {% if site.disqus_username %}
@@ -77,4 +77,4 @@
       <!-- Duoshuo Comment END -->
       {% endif %}
   {% endcase %}
-<!--{% endif %}-->
+{% endif %}
