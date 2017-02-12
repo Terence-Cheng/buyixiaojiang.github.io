@@ -36,10 +36,10 @@ keywords: input, width
   * 设置子元素宽度百分比
     * 先看代码 
     
-         ```xml
-         <div style="display: inline-block;border: 1px solid red;">
-            <input type="text" style="width: 50%;background: black">
-        </div>
+        ```
+             <div style="display: inline-block;border: 1px solid red;">
+                <input type="text" style="width: 50%;background: black">
+            </div>
         ```
     * chrome的展示效果
 ![chrome下的展示效果.png](http://upload-images.jianshu.io/upload_images/2741651-3b245a1f22a2ca23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

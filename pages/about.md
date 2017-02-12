@@ -18,7 +18,8 @@ permalink: /about/
 ## 联系
 
 * GitHub：[@buyixiaojiang](https://github.com/buyixiaojiang)
-* 知乎: [@chengtingsen](https://www.zhihu.com/people/cheng-ting-sen/activities)
+* 简书：[@布衣小酱](http://www.jianshu.com/u/b95e75f2bbd7)
+* 知乎: [@程亭森](https://www.zhihu.com/people/cheng-ting-sen/activities)
 
 
 ## Skill Keywords
