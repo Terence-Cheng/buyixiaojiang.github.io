@@ -20,9 +20,9 @@ keywords: input, width
   * 通过在浏览器测试，先不设置子元素宽度百分比的情况
       * 代码 
       
-         ```html
+         ```xml
              <div style="display: inline-block;border: 1px solid red;">
-                  <input type="text">
+                  <input type="text" />
             </div>
          ```
 
@@ -36,9 +36,9 @@ keywords: input, width
   * 设置子元素宽度百分比
     * 先看代码 
     
-        ```html
+        ```xml
              <div style="display: inline-block;border: 1px solid red;">
-                <input type="text" style="width: 50%;background: black">
+                <input type="text" style="width: 50%;background: black" />
             </div>
         ```
     * chrome的展示效果
