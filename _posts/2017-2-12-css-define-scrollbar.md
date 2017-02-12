@@ -6,6 +6,8 @@ description: 用CSS的方式自定义滚动条
 keywords: 滚动条, scrollbar
 ---
 
+原文首发与[简书](http://www.jianshu.com/p/8b407178c07d)。
+
 # 一、先看自定义滚动条在各个浏览器的效果
 * 先看chrome 下的样式
 
@@ -34,10 +36,10 @@ keywords: 滚动条, scrollbar
     当然IE下对滚动条也有其他别的方面的设置，但目前发现都是基于颜色的设置，而没有宽度的设置。
 
     具体滚动条属性的讲解中，我参考了这两篇博客，如果对滚动条的具体属性感兴趣的，可以参考下面的博客
-    http://www.w3cways.com/1670.html
-    http://www.lyblog.net/detail/314.html
+    [http://www.w3cways.com/1670.html](http://www.w3cways.com/1670.html)。
+    [http://www.lyblog.net/detail/314.html](http://www.lyblog.net/detail/314.html)。
+    
 * 火狐及其他浏览器中CSS设置滚动条是不起作用的
 
 # 三、最后
 除了CSS设置滚动条外，还可以通过Js来实现，或者直接用别人写的插件。
-第一次写博客，有不足之处，大家多多指出。

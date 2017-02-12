@@ -6,6 +6,8 @@ description: 浏览器对input框默认宽度的不同所导致的问题。
 keywords: input, width
 ---
 
+原文首发与[简书](http://www.jianshu.com/p/0e01d96a3a58)。
+
 > 来源：最近后端同事让我帮他修改样式的兼容性，chrome与firefox下显示的不同（只兼容这两个浏览器），究其原因，应该是两个浏览器在input(不说类型的话，默认为text，下同)默认宽度不一致导致的。
 
 * 先看效果
@@ -20,7 +22,7 @@ keywords: input, width
   * 通过在浏览器测试，先不设置子元素宽度百分比的情况
       * 代码 
       
-         ```xml
+         ```
              <div style="display: inline-block;border: 1px solid red;">
                   <input type="text" />
             </div>
@@ -36,7 +38,7 @@ keywords: input, width
   * 设置子元素宽度百分比
     * 先看代码 
     
-        ```xml
+        ```
              <div style="display: inline-block;border: 1px solid red;">
                 <input type="text" style="width: 50%;background: black" />
             </div>
@@ -71,3 +73,5 @@ keywords: input, width
 * 解决方案
     * 重置input框的宽度为数值，不要用浏览器默认的宽度，否则可能会导致在各个浏览器的表现不一致
     * 重置input的宽度为百分比，而其父元素的宽度由内容决定（比如display:inline-block），就会出现本例中的情况，此时可以定义父元素的宽度，不让其宽度由内容决定
+    
+* 
