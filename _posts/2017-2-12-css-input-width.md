@@ -19,9 +19,11 @@ keywords: input, width
   * 子元素的宽度设置为百分比 <= 父元素的宽度
   * 通过在浏览器测试，先不设置子元素宽度百分比的情况
       * 代码 
-	 ``` <div style="display: inline-block;border: 1px solid red;">
+	 ```html
+	 <div style="display: inline-block;border: 1px solid red;">
 	      <input type="text">
-	</div>```
+	</div>
+	```
 
     * chrome展示效果
 ![chrome下未定义子元素宽度的展示.png](http://upload-images.jianshu.io/upload_images/2741651-1d6005f27375b547.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -32,9 +34,11 @@ keywords: input, width
 
   * 设置子元素宽度百分比
     * 先看代码 
-	 ``` <div style="display: inline-block;border: 1px solid red;">
+	 ```html
+	 <div style="display: inline-block;border: 1px solid red;">
 		<input type="text" style="width: 50%;background: black">
-	</div>```
+	</div>
+	```
     * chrome的展示效果
 ![chrome下的展示效果.png](http://upload-images.jianshu.io/upload_images/2741651-3b245a1f22a2ca23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
     * 子元素input的宽度
