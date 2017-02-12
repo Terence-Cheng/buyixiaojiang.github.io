@@ -6,7 +6,7 @@ description: 用CSS的方式自定义滚动条
 keywords: 滚动条, scrollbar
 ---
 
-原文首发与[简书](http://www.jianshu.com/p/8b407178c07d)。
+原文首发于[简书](http://www.jianshu.com/p/8b407178c07d)。
 
 # 一、先看自定义滚动条在各个浏览器的效果
 * 先看chrome 下的样式
