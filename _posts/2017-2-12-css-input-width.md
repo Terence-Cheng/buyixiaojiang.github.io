@@ -20,11 +20,11 @@ keywords: input, width
   * 通过在浏览器测试，先不设置子元素宽度百分比的情况
       * 代码 
       
-         ```xml
-         <div style="display: inline-block;border: 1px solid red;">
-              <input type="text">
-        </div>
-        ```
+         ```html
+             <div style="display: inline-block;border: 1px solid red;">
+                  <input type="text">
+            </div>
+         ```
 
     * chrome展示效果
 ![chrome下未定义子元素宽度的展示.png](http://upload-images.jianshu.io/upload_images/2741651-1d6005f27375b547.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -36,7 +36,7 @@ keywords: input, width
   * 设置子元素宽度百分比
     * 先看代码 
     
-        ```
+        ```html
              <div style="display: inline-block;border: 1px solid red;">
                 <input type="text" style="width: 50%;background: black">
             </div>
