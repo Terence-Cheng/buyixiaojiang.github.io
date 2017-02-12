@@ -4,8 +4,8 @@
 baseurl:
 url: http://buyixiaojiang.github.io/
 date_format: "ordinal"
-title: 记录与思考
-subtitle: "积累工作与生活遇到的问题"
+title: 积累与思考
+subtitle: "记录工作与生活遇到的问题"
 description: "程亭森的个人博客"
 keywords: 前端, 博客, 程亭森, mazhuang
 favicon: /favicon.ico
@@ -34,13 +34,13 @@ navs:
     href: /categories/
     label: 分类
 
-  -
-    href: /wiki/
-    label: 维基
-
-  -
-    href: /links/
-    label: 链接
+#  -
+#    href: /wiki/
+#    label: 维基
+#
+#  -
+#    href: /links/
+#    label: 链接
 
   -
     href: /about/
@@ -82,12 +82,8 @@ repository: mzlogin/mzlogin.github.io
 # ---------------- #
 #      Socials     #
 # ---------------- #
-github_username: mzlogin
-douban_username: freedim
-facebook_username: mzlogin
-weibo_username: mzlogin
-zhihu_username: mzlogin
-twitter_username: mzlogin
+github_username: buyixiaojiang
+
 
 # ---------------- #
 #      Comments    #
