@@ -30,9 +30,9 @@ navs:
     href: /
     label: 首页
 
-  -
-    href: /categories/
-    label: 分类
+#  -
+#    href: /categories/
+#    label: 分类
 
 #  -
 #    href: /wiki/
